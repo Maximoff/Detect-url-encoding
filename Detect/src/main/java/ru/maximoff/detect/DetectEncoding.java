@@ -8,7 +8,7 @@ public class DetectEncoding {
 	private static String[] encodigs = new String[] {"UTF-8", "CP1251", "ISO-8859-1"};
 
 	public static String detectNameEncoding(String url) throws UnsupportedEncodingException {
-		String name = getNameFronUrl(url);
+		String name = getNameFromUrl(url);
 		if (name.equals("")) {
 			return encodigs[0];
 		}
@@ -23,7 +23,7 @@ public class DetectEncoding {
 		return encodigs[0];
 	}
 
-	private static String getNameFronUrl(String url) {
+	private static String getNameFromUrl(String url) {
 		String name = "";
 		int p = url.lastIndexOf('/');
 		if (p >= 0 && url.length() > p) {
